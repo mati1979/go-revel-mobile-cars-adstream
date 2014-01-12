@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"code.google.com/p/go.net/websocket"
 	"github.com/mati1979/go-revel-mobile-cars-adstream/app/xmlcodec"
+	"github.com/robfig/revel"
 )
 
 type AdData struct {
@@ -13,6 +14,12 @@ type AdData struct {
 }
 
 func Connect() {
+	user, foundLogin := revel.Config.String("adstream.user")
+	pass, foundPass := revel.Config.String("adstream.pass")
+
+	if !foundLogin || !foundPass {
+	}
+
 	url := fmt.Sprintf("ws://%s/mobile-ad-stream/websocket/events", "adstream.mobile.de:80")
 	config, err := websocket.NewConfig(url, "http://localhost/")
 	fmt.Println("connect")
@@ -20,7 +27,7 @@ func Connect() {
 		fmt.Println(fmt.Sprintf("error1:%s", err))
 		return
 	}
-	login := "xxx" + ":" + "xx"
+	login := user + ":" + pass
 	auth := "Basic " + base64.StdEncoding.EncodeToString([]byte(login))
 	config.Header.Add("Authorization", auth)
 
