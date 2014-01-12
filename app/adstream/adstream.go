@@ -5,7 +5,7 @@ import (
 	"code.google.com/p/go.net/websocket"
 	"encoding/base64"
 	"encoding/xml"
-	"github.com/mati1979/go/revel/revelhello/app/xmlcodec"
+	"github.com/mati1979/go-revel-mobile-cars-adstream/app/xmlcodec"
 )
 
 type AdEvent struct {

@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/robfig/revel"
-	"github.com/mati1979/go/revel/revelhello/app/adstream"
+	"github.com/mati1979/go-revel-mobile-cars-adstream/app/adstream"
 )
 
 type App struct {
