@@ -15,11 +15,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="span6">
-            <div id="messages">
-            </div>
+        <div class="span12">
+            <div id="messages"></div>
         </div>
-        <div class="span6">
+        <div class="span12">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="span12">
             {{template "flash.html" .}}
         </div>
     </div>
@@ -29,9 +31,10 @@
     var socket = new WebSocket('ws://'+window.location.host+'/websocket/ad/stream')
     socket.onmessage = function(event) {
         var obj = JSON.parse(event.data)
-        console.log(obj)
-        $('#messages').append("<p>" + obj.AdId + ":" + obj.ZipCode + "</p>");
-        window.scrollTo(0,document.body.scrollHeight);
+        //console.log(obj)
+        $('#messages').empty();
+        $('#messages').append("<p>AdId:" + obj.AdId + " PLZ:" + obj.ZipCode + "</p>");
+//        window.scrollTo(0,document.body.scrollHeight);
     }
 </script>
 
