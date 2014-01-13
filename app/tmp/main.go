@@ -5,6 +5,7 @@ import (
 	"flag"
 	"reflect"
 	"github.com/robfig/revel"
+	websocket "code.google.com/p/go.net/websocket"
 	controllers "github.com/mati1979/go-revel-mobile-cars-adstream/app/controllers"
 	tests "github.com/mati1979/go-revel-mobile-cars-adstream/tests"
 	controllers1 "github.com/robfig/revel/modules/static/app/controllers"
@@ -36,6 +37,19 @@ func main() {
 				RenderArgNames: map[int][]string{ 
 					12: []string{ 
 					},
+				},
+			},
+			
+		})
+	
+	revel.RegisterController((*controllers.WebSocket)(nil),
+		[]*revel.MethodType{
+			&revel.MethodType{
+				Name: "AdStreamSocket",
+				Args: []*revel.MethodArg{ 
+					&revel.MethodArg{Name: "ws", Type: reflect.TypeOf((**websocket.Conn)(nil)) },
+				},
+				RenderArgNames: map[int][]string{ 
 				},
 			},
 			

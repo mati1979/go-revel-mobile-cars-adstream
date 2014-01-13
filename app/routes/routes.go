@@ -16,6 +16,20 @@ func (_ tApp) Index(
 }
 
 
+type tWebSocket struct {}
+var WebSocket tWebSocket
+
+
+func (_ tWebSocket) AdStreamSocket(
+		ws interface{},
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "ws", ws)
+	return revel.MainRouter.Reverse("WebSocket.AdStreamSocket", args).Url
+}
+
+
 type tTestRunner struct {}
 var TestRunner tTestRunner
 
