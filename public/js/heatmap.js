@@ -29,7 +29,6 @@ $(function ($, w) {
                     map: map
                 });
                 markers.push(marker);
-                //console.log("update lat, lon:" + lat +":" + lon)
                 adData.push(latlon);
                 if (adData.length % 100 == 0) {
                     heatmap.initialize();
@@ -40,8 +39,10 @@ $(function ($, w) {
                         map: map
                     });
                     heat.setMap(map);
-                    //adData = []
                     markers = []
+                }
+                if (adData.length >= 100000) {
+                    adData.shift()
                 }
             },
 
