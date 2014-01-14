@@ -80,7 +80,8 @@ func Connect() {
 	pass, foundPass := revel.Config.String("adstream.pass")
 
 	if !foundLogin || !foundPass {
-		fmt.Printf("Need credentials")
+		fmt.Printf("Error: need credentials!")
+		os.Exit(1)
 	}
 
 	url := fmt.Sprintf("ws://%s/mobile-ad-stream/websocket/events", "adstream.mobile.de:80")
@@ -97,6 +98,7 @@ func Connect() {
 	ws, err := websocket.DialConfig(config)
 	if err != nil {
 		fmt.Printf("Dial failed: %s\n", err.Error())
+		os.Exit(1)
 	}
 
 	for {

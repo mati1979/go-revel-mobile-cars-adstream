@@ -162,9 +162,7 @@ $(function ($, w) {
                     var obj = JSON.parse(event.data)
                     $('#messages').empty();
                     $('#messages').append("<p>" + count + "</p>");
-                    if (obj.Lat > 0 && obj.Lon > 0) {
-                        heatmap.update(obj.Lat, obj.Lon)
-                    }
+                    heatmap.update(obj.Lat, obj.Lon)
                 }
             },
 
