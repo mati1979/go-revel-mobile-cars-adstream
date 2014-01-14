@@ -10,13 +10,9 @@ import (
 	"io"
 	"github.com/mati1979/go-revel-mobile-cars-adstream/app/xmlcodec"
 	"strconv"
-	"time"
 )
 
 type AdEvent struct {
-	AdId string
-	ZipCode string
-	Timestamp int    // Unix timestamp (secs)
 	Lat float64
 	Lon float64
 }
@@ -25,8 +21,6 @@ type Subscription struct {
 	New <- chan AdEvent
 	Archive []AdEvent
 }
-
-const archiveSize = 10000
 
 var (
 	subscribe = make(chan (chan <- Subscription), 10)
@@ -47,6 +41,8 @@ func (sub Subscription) Cancel() {
 }
 
 func AdStream() {
+	archiveSize := revel.Config.IntDefault("archive.size", 10000)
+
 	archive := list.New()
 	subscribers := list.New()
 	for {
@@ -114,18 +110,12 @@ func Connect() {
 			}
 		}
 		if event.EventType == "AD_CREATE_OR_UPDATE" {
-			Id := event.Ad.AdKey
-			ZipCode := event.Ad.Seller.SellerAddress.SellerZipCode.ZipCode
-			Time := int(time.Now().Unix())
 			if (event.Ad.Seller.SellerCoords != nil) {
 				Lat := ParseF(&event.Ad.Seller.SellerCoords.Latitude)
 				Lon := ParseF(&event.Ad.Seller.SellerCoords.Longitude)
-				AdEven := AdEvent{Id, ZipCode, Time, Lat, Lon}
+				AdEven := AdEvent{Lat, Lon}
 				publish <- AdEven
-//			} else {
-//				AdEven := AdEvent{Id, ZipCode, Time, 0, 0}
-//				publish <- AdEven
-			}
+			} //else convert postcode to lat lon
 		}
 	}
 }
