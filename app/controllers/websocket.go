@@ -4,7 +4,6 @@ import (
 	"code.google.com/p/go.net/websocket"
 	"github.com/robfig/revel"
 	"github.com/mati1979/go-revel-mobile-cars-adstream/app/adstream"
-	//"fmt"
 )
 
 type WebSocket struct {
@@ -17,9 +16,7 @@ func (c WebSocket) AdStreamSocket(ws *websocket.Conn) revel.Result {
 	defer sub.Cancel()
 
 	// Send down the archive.
-	//fmt.Println("Archive...");
 	for _, event := range sub.Archive {
-		//fmt.Println("event:" + event.AdId);
 		if websocket.JSON.Send(ws, &event) != nil {
 			// They disconnected
 			return nil

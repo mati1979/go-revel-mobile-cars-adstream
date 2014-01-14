@@ -26,7 +26,7 @@ type Subscription struct {
 	Archive []AdEvent
 }
 
-const archiveSize = 100
+const archiveSize = 10000
 
 var (
 	subscribe = make(chan (chan <- Subscription), 10)
@@ -122,9 +122,9 @@ func Connect() {
 				Lon := ParseF(&event.Ad.Seller.SellerCoords.Longitude)
 				AdEven := AdEvent{Id, ZipCode, Time, Lat, Lon}
 				publish <- AdEven
-			} else {
-				AdEven := AdEvent{Id, ZipCode, Time, 0, 0}
-				publish <- AdEven
+//			} else {
+//				AdEven := AdEvent{Id, ZipCode, Time, 0, 0}
+//				publish <- AdEven
 			}
 		}
 	}
