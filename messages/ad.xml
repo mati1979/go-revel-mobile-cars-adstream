@@ -1,177 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <search:event xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xmlns:error="http://services.mobile.de/schema/common/error-1.0"
-              xmlns:search="http://services.mobile.de/schema/search"
               xmlns:financing="http://services.mobile.de/schema/common/financing-1.0"
-              xmlns:ad="http://services.mobile.de/schema/ad" xmlns:seller="http://services.mobile.de/schema/seller"
+              xmlns:search="http://services.mobile.de/schema/search" xmlns:ad="http://services.mobile.de/schema/ad"
+              xmlns:seller="http://services.mobile.de/schema/seller"
               xmlns:resource="http://services.mobile.de/schema/resource"
               xsi:schemaLocation="http://services.mobile.de/schema/search http://services.mobile.de/schema/search-1.0.xsd">
     <search:event-type>AD_CREATE_OR_UPDATE</search:event-type>
-    <search:ad-key>188420982</search:ad-key>
-    <ad:ad key="188420982" url="http://mesa.mobile.de/1.0.0/ad/188420982">
-        <ad:creation-date value="2013-12-28T12:55:51+01:00"></ad:creation-date>
-        <ad:modification-date value="2014-01-12T17:25:53+01:00"></ad:modification-date>
+    <search:ad-key>185150425</search:ad-key>
+    <ad:ad key="185150425" url="http://mesa.mobile.de/1.0.0/ad/185150425">
+        <ad:creation-date value="2013-10-04T23:55:10+02:00"></ad:creation-date>
+        <ad:modification-date value="2014-01-14T18:56:42+01:00"></ad:modification-date>
         <ad:detail-page
-                url="http://suchen.mobile.de/auto-inserat/bmw-520i-ohne-rost-t%C3%BCv-bis-2015-dachau/188420982.html"></ad:detail-page>
+                url="http://suchen.mobile.de/auto-inserat/bmw-320-serie-3-320d-xdrive-sport-chambery/185150425.html"></ad:detail-page>
         <ad:vehicle>
             <ad:class key="Car" url="http://services.mobile.de/1.0.0/refdata/classes/Car"></ad:class>
             <ad:category key="Limousine"
                          url="http://services.mobile.de/1.0.0/refdata/categories/Limousine"></ad:category>
             <ad:make key="BMW" url="http://services.mobile.de/1.0.0/refdata/classes/Car/makes/BMW"></ad:make>
-            <ad:model key="520"
-                      url="http://services.mobile.de/1.0.0/refdata/classes/Car/makes/BMW/models/520"></ad:model>
-            <ad:model-description value="520i OHNE ROST TÜV BIS 2015"></ad:model-description>
+            <ad:model key="320"
+                      url="http://services.mobile.de/1.0.0/refdata/classes/Car/makes/BMW/models/320"></ad:model>
+            <ad:model-description value="Serie 3 320d xDrive Sport"></ad:model-description>
             <ad:damage-and-unrepaired value="false"></ad:damage-and-unrepaired>
-            <ad:accident-damaged value="false"></ad:accident-damaged>
             <ad:features url="http://services.mobile.de/1.0.0/refdata/features">
-                <ad:feature key="METALLIC" url="http://services.mobile.de/1.0.0/refdata/features/METALLIC"></ad:feature>
-                <ad:feature key="TRAILER_COUPLING"
-                            url="http://services.mobile.de/1.0.0/refdata/features/TRAILER_COUPLING"></ad:feature>
-                <ad:feature key="ALLOY_WHEELS"
-                            url="http://services.mobile.de/1.0.0/refdata/features/ALLOY_WHEELS"></ad:feature>
-                <ad:feature key="CENTRAL_LOCKING"
-                            url="http://services.mobile.de/1.0.0/refdata/features/CENTRAL_LOCKING"></ad:feature>
-                <ad:feature key="ELECTRIC_WINDOWS"
-                            url="http://services.mobile.de/1.0.0/refdata/features/ELECTRIC_WINDOWS"></ad:feature>
-                <ad:feature key="IMMOBILIZER"
-                            url="http://services.mobile.de/1.0.0/refdata/features/IMMOBILIZER"></ad:feature>
-                <ad:feature key="POWER_ASSISTED_STEERING"
-                            url="http://services.mobile.de/1.0.0/refdata/features/POWER_ASSISTED_STEERING"></ad:feature>
-                <ad:feature key="ABS" url="http://services.mobile.de/1.0.0/refdata/features/ABS"></ad:feature>
-                <ad:feature key="ESP" url="http://services.mobile.de/1.0.0/refdata/features/ESP"></ad:feature>
-                <ad:feature key="FULL_SERVICE_HISTORY"
-                            url="http://services.mobile.de/1.0.0/refdata/features/FULL_SERVICE_HISTORY"></ad:feature>
-                <ad:feature key="CRUISE_CONTROL"
-                            url="http://services.mobile.de/1.0.0/refdata/features/CRUISE_CONTROL"></ad:feature>
-                <ad:feature key="E10_ENABLED"
-                            url="http://services.mobile.de/1.0.0/refdata/features/E10_ENABLED"></ad:feature>
-                <ad:feature key="ELECTRIC_EXTERIOR_MIRRORS"
-                            url="http://services.mobile.de/1.0.0/refdata/features/ELECTRIC_EXTERIOR_MIRRORS"></ad:feature>
-                <ad:feature key="ON_BOARD_COMPUTER"
-                            url="http://services.mobile.de/1.0.0/refdata/features/ON_BOARD_COMPUTER"></ad:feature>
-                <ad:feature key="MULTIFUNCTIONAL_WHEEL"
-                            url="http://services.mobile.de/1.0.0/refdata/features/MULTIFUNCTIONAL_WHEEL"></ad:feature>
-                <ad:feature key="TUNER" url="http://services.mobile.de/1.0.0/refdata/features/TUNER"></ad:feature>
-                <ad:feature key="PARKING_SENSORS"
-                            url="http://services.mobile.de/1.0.0/refdata/features/PARKING_SENSORS"></ad:feature>
+                <ad:feature key="NAVIGATION_SYSTEM"
+                            url="http://services.mobile.de/1.0.0/refdata/features/NAVIGATION_SYSTEM"></ad:feature>
+                <ad:feature key="WARRANTY" url="http://services.mobile.de/1.0.0/refdata/features/WARRANTY"></ad:feature>
             </ad:features>
             <ad:specifics>
-                <ad:exterior-color key="BLACK" url="http://services.mobile.de/1.0.0/refdata/colors/BLACK">
-                    <ad:metalic value="true"></ad:metalic>
-                </ad:exterior-color>
-                <ad:mileage value="230000"></ad:mileage>
-                <ad:general-inspection value="2015-05"></ad:general-inspection>
+                <ad:exterior-color key="WHITE"
+                                   url="http://services.mobile.de/1.0.0/refdata/colors/WHITE"></ad:exterior-color>
+                <ad:mileage value="9990"></ad:mileage>
                 <ad:door-count key="FOUR_OR_FIVE"
                                url="http://services.mobile.de/1.0.0/refdata/doorcounts/FOUR_OR_FIVE"></ad:door-count>
-                <ad:first-registration value="1998-04"></ad:first-registration>
-                <ad:emission-class key="EURO2"
-                                   url="http://services.mobile.de/1.0.0/refdata/emissionclasses/EURO2"></ad:emission-class>
-                <ad:emission-fuel-consumption envkv-compliant="false" co2-emission="216.0" inner="13.0" outer="6.8"
-                                              combined="9.1" unit="LITER_PER_100_KM"></ad:emission-fuel-consumption>
-                <ad:emission-sticker key="EMISSIONSSTICKER_GREEN"
-                                     url="http://services.mobile.de/1.0.0/refdata/emissionstickers/EMISSIONSSTICKER_GREEN"></ad:emission-sticker>
-                <ad:fuel key="PETROL" url="http://services.mobile.de/1.0.0/refdata/fuels/PETROL"></ad:fuel>
-                <ad:power value="110"></ad:power>
+                <ad:first-registration value="2012-12"></ad:first-registration>
+                <ad:fuel key="DIESEL" url="http://services.mobile.de/1.0.0/refdata/fuels/DIESEL"></ad:fuel>
                 <ad:gearbox key="MANUAL_GEAR"
                             url="http://services.mobile.de/1.0.0/refdata/gearboxes/MANUAL_GEAR"></ad:gearbox>
-                <ad:num-seats value="5"></ad:num-seats>
-                <ad:cubic-capacity value="1991"></ad:cubic-capacity>
                 <ad:condition key="USED" url="http://services.mobile.de/1.0.0/refdata/conditions/USED"></ad:condition>
-                <ad:interior-color key="BLACK"
-                                   url="http://services.mobile.de/1.0.0/refdata/interiorColors/BLACK"></ad:interior-color>
-                <ad:interior-type key="FABRIC"
-                                  url="http://services.mobile.de/1.0.0/refdata/interiorTypes/FABRIC"></ad:interior-type>
-                <ad:airbag key="FRONT_AND_SIDE_AND_MORE_AIRBAGS"
-                           url="http://services.mobile.de/1.0.0/refdata/airbags/FRONT_AND_SIDE_AND_MORE_AIRBAGS"></ad:airbag>
-                <ad:number-of-previous-owners>2</ad:number-of-previous-owners>
-                <ad:parking-assistants>
-                    <ad:parking-assistant key="FRONT_SENSORS"
-                                          url="http://services.mobile.de/1.0.0/refdata/parkingassistants/FRONT_SENSORS"></ad:parking-assistant>
-                    <ad:parking-assistant key="REAR_SENSORS"
-                                          url="http://services.mobile.de/1.0.0/refdata/parkingassistants/REAR_SENSORS"></ad:parking-assistant>
-                </ad:parking-assistants>
             </ad:specifics>
         </ad:vehicle>
-        <ad:description>Hallo, verkaufe meinen 520i mit Tüv bis 2015. Der BMW ist nicht der jüngste und hat ein paar
-            kleine Kratzer aber ohne roststellen. Technisch und optisch im einem guten zuschtand anschauen lohnsicht
+        <ad:description>Accoudoir central avant coulissant,Banquette arriere rabattable 40/20/40 avec accoudoir central
+            arriere,Choix Direction Sport,Climatisation automatique trois zones,Coques de retroviseurs exterieurs
+            noires,Direction Sport a demultiplication variable,Ecran d'information haute resolution pour le combine
+            d'instrumentation,Interface Bluetooth pour téléphone portable avec port audio USB,Kit Fumeurs,Omission
+            sigle,Pneumatiques RSC permettant le roulage à plat,Regulateur de vitesse avec fonction freinage,Shadow Line
+            brillant,Systeme de navigation Business,Touches multifonctions sur le volant,Baguette rouge soulignant
+            l'insert decoratif,Camera de recul,Ciel de pavillon Anthrazit,Cuir Dakota Schwarz avec liseré contrastant
+            Rot,Detecteur de pluie et allumage automatique des projecteurs,Feux de route permanents
+            anti-eblouissement,Head-up Display,Inserts decoratifs en aluminium poli,Jantes en alliage leger 18 style 397
+            a rayons doubles,Kit Eclairage,Lave-projecteurs avant,Pack Advanced Xenon,Pack Innovation,Projecteurs
+            bi-Xenon,Projecteurs directionnels Vendu par : ISERAN AUTOMOBILES
         </ad:description>
-        <ad:enrichedDescription>Hallo, verkaufe meinen 520i mit Tüv bis 2015. Der BMW ist nicht der jüngste und hat ein
-            paar kleine Kratzer aber ohne roststellen. Technisch und optisch im einem guten zuschtand anschauen
-            lohnsicht
+        <ad:enrichedDescription>Accoudoir central avant coulissant,Banquette arriere rabattable 40/20/40 avec accoudoir
+            central arriere,Choix Direction Sport,Climatisation automatique trois zones,Coques de retroviseurs
+            exterieurs noires,Direction Sport a demultiplication variable,Ecran d'information haute resolution pour le
+            combine d'instrumentation,Interface Bluetooth pour téléphone portable avec port audio USB,Kit
+            Fumeurs,Omission sigle,Pneumatiques RSC permettant le roulage à plat,Regulateur de vitesse avec fonction
+            freinage,Shadow Line brillant,Systeme de navigation Business,Touches multifonctions sur le volant,Baguette
+            rouge soulignant l'insert decoratif,Camera de recul,Ciel de pavillon Anthrazit,Cuir Dakota Schwarz avec
+            liseré contrastant Rot,Detecteur de pluie et allumage automatique des projecteurs,Feux de route permanents
+            anti-eblouissement,Head-up Display,Inserts decoratifs en aluminium poli,Jantes en alliage leger 18 style 397
+            a rayons doubles,Kit Eclairage,Lave-projecteurs avant,Pack Advanced Xenon,Pack Innovation,Projecteurs
+            bi-Xenon,Projecteurs directionnels Vendu par : ISERAN AUTOMOBILES
         </ad:enrichedDescription>
-        <ad:images gallery-url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/vBYAAOxydlFSvrgG/$_23.JPG"
-                   url="http://mesa.mobile.de/1.0.0/ad/188420982/images">
+        <ad:images gallery-url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/H-cAAOxydlFS1XpO/$_23.JPG"
+                   url="http://mesa.mobile.de/1.0.0/ad/185150425/images">
             <ad:image>
                 <ad:representation size="ICON"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/vBYAAOxydlFSvrgG/$_23.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/H-cAAOxydlFS1XpO/$_23.JPG"></ad:representation>
                 <ad:representation size="S"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/vBYAAOxydlFSvrgG/$_18.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/H-cAAOxydlFS1XpO/$_18.JPG"></ad:representation>
                 <ad:representation size="L"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/vBYAAOxydlFSvrgG/$_1.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/H-cAAOxydlFS1XpO/$_1.JPG"></ad:representation>
                 <ad:representation size="M"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/vBYAAOxydlFSvrgG/$_24.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/H-cAAOxydlFS1XpO/$_24.JPG"></ad:representation>
                 <ad:representation size="XL"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/vBYAAOxydlFSvrgG/$_27.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/H-cAAOxydlFS1XpO/$_27.JPG"></ad:representation>
             </ad:image>
             <ad:image>
                 <ad:representation size="ICON"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oKMAAOxyNo9Svrfu/$_23.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/0-4AAOxygPtS1XpQ/$_23.JPG"></ad:representation>
                 <ad:representation size="S"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oKMAAOxyNo9Svrfu/$_18.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/0-4AAOxygPtS1XpQ/$_18.JPG"></ad:representation>
                 <ad:representation size="L"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oKMAAOxyNo9Svrfu/$_1.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/0-4AAOxygPtS1XpQ/$_1.JPG"></ad:representation>
                 <ad:representation size="M"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oKMAAOxyNo9Svrfu/$_24.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/0-4AAOxygPtS1XpQ/$_24.JPG"></ad:representation>
                 <ad:representation size="XL"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oKMAAOxyNo9Svrfu/$_27.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/0-4AAOxygPtS1XpQ/$_27.JPG"></ad:representation>
             </ad:image>
             <ad:image>
                 <ad:representation size="ICON"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/d-sAAOxycmBSvrfh/$_23.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/b8oAAOxy63FS1XpS/$_23.JPG"></ad:representation>
                 <ad:representation size="S"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/d-sAAOxycmBSvrfh/$_18.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/b8oAAOxy63FS1XpS/$_18.JPG"></ad:representation>
                 <ad:representation size="L"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/d-sAAOxycmBSvrfh/$_1.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/b8oAAOxy63FS1XpS/$_1.JPG"></ad:representation>
                 <ad:representation size="M"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/d-sAAOxycmBSvrfh/$_24.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/b8oAAOxy63FS1XpS/$_24.JPG"></ad:representation>
                 <ad:representation size="XL"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/d-sAAOxycmBSvrfh/$_27.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/b8oAAOxy63FS1XpS/$_27.JPG"></ad:representation>
             </ad:image>
             <ad:image>
                 <ad:representation size="ICON"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/h0cAAOxyVLNSvrg5/$_23.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/K-IAAMXQVERS1XpT/$_23.JPG"></ad:representation>
                 <ad:representation size="S"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/h0cAAOxyVLNSvrg5/$_18.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/K-IAAMXQVERS1XpT/$_18.JPG"></ad:representation>
                 <ad:representation size="L"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/h0cAAOxyVLNSvrg5/$_1.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/K-IAAMXQVERS1XpT/$_1.JPG"></ad:representation>
                 <ad:representation size="M"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/h0cAAOxyVLNSvrg5/$_24.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/K-IAAMXQVERS1XpT/$_24.JPG"></ad:representation>
                 <ad:representation size="XL"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/h0cAAOxyVLNSvrg5/$_27.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/K-IAAMXQVERS1XpT/$_27.JPG"></ad:representation>
             </ad:image>
             <ad:image>
                 <ad:representation size="ICON"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oT8AAOxyNo9Svrf4/$_23.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/2oUAAOxyVaBS1XpV/$_23.JPG"></ad:representation>
                 <ad:representation size="S"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oT8AAOxyNo9Svrf4/$_18.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/2oUAAOxyVaBS1XpV/$_18.JPG"></ad:representation>
                 <ad:representation size="L"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oT8AAOxyNo9Svrf4/$_1.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/2oUAAOxyVaBS1XpV/$_1.JPG"></ad:representation>
                 <ad:representation size="M"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oT8AAOxyNo9Svrf4/$_24.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/2oUAAOxyVaBS1XpV/$_24.JPG"></ad:representation>
                 <ad:representation size="XL"
-                                   url="http://i.ebayimg.com/00/s/NDgwWDY0MA==/z/oT8AAOxyNo9Svrf4/$_27.JPG"></ad:representation>
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/2oUAAOxyVaBS1XpV/$_27.JPG"></ad:representation>
+            </ad:image>
+            <ad:image>
+                <ad:representation size="ICON"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/OlIAAOxyVLNS1XpY/$_23.JPG"></ad:representation>
+                <ad:representation size="S"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/OlIAAOxyVLNS1XpY/$_18.JPG"></ad:representation>
+                <ad:representation size="L"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/OlIAAOxyVLNS1XpY/$_1.JPG"></ad:representation>
+                <ad:representation size="M"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/OlIAAOxyVLNS1XpY/$_24.JPG"></ad:representation>
+                <ad:representation size="XL"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/OlIAAOxyVLNS1XpY/$_27.JPG"></ad:representation>
+            </ad:image>
+            <ad:image>
+                <ad:representation size="ICON"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/IO8AAOxydlFS1Xpa/$_23.JPG"></ad:representation>
+                <ad:representation size="S"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/IO8AAOxydlFS1Xpa/$_18.JPG"></ad:representation>
+                <ad:representation size="L"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/IO8AAOxydlFS1Xpa/$_1.JPG"></ad:representation>
+                <ad:representation size="M"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/IO8AAOxydlFS1Xpa/$_24.JPG"></ad:representation>
+                <ad:representation size="XL"
+                                   url="http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/IO8AAOxydlFS1Xpa/$_27.JPG"></ad:representation>
             </ad:image>
         </ad:images>
-        <ad:price currency="EUR" type="NEGOTIABLE">
-            <ad:consumer-price-amount value="2100.00"></ad:consumer-price-amount>
-            <ad:vatable value="false"></ad:vatable>
+        <ad:price currency="EUR" type="FIXED">
+            <ad:consumer-price-amount value="41900.00"></ad:consumer-price-amount>
+            <ad:vatable value="true"></ad:vatable>
         </ad:price>
-        <seller:seller key="6071614" url="http://mesa.mobile.de/1.0.0/seller/6071614">
-            <seller:type value="FOR_SALE_BY_OWNER" commercial="false"></seller:type>
+        <seller:seller key="10304581" url="http://mesa.mobile.de/1.0.0/seller/10304581">
+            <seller:type value="DEALER" commercial="true"></seller:type>
+            <seller:company-name value="ISERAN AUTOMOBILES"></seller:company-name>
             <seller:address>
-                <seller:zipcode value="85***"></seller:zipcode>
-                <seller:country-code value="DE"></seller:country-code>
+                <seller:street value="Rue Alexander Fleming"></seller:street>
+                <seller:zipcode value="73000"></seller:zipcode>
+                <seller:city value="Chambery"></seller:city>
+                <seller:country-code value="FR"></seller:country-code>
             </seller:address>
+            <seller:phone type="FIXED" country-calling-code="33" area-code="0" number="479713535"></seller:phone>
+            <seller:phone type="FAX" country-calling-code="33" area-code="0" number="479713535"></seller:phone>
+            <seller:homepage value="http://home.automobile.fr/ISERANAUTOMOBILES"></seller:homepage>
+            <seller:mobile-seller-since value="2013-07-23+02:00"></seller:mobile-seller-since>
+            <seller:coordinates>
+                <seller:latitude>45.597314</seller:latitude>
+                <seller:longitude>5.895331</seller:longitude>
+            </seller:coordinates>
         </seller:seller>
     </ad:ad>
 </search:event>

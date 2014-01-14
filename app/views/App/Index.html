@@ -3,16 +3,6 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-<header class="hero-unit">
-    <div class="container">
-        <div class="row">
-            <div class="hero-text">
-                Mobile WebSocket Stream
-            </div>
-        </div>
-    </div>
-</header>
-
 <div class="container">
     <div class="row">
         <div class="span12">
@@ -26,16 +16,5 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-    var socket = new WebSocket('ws://'+window.location.host+'/websocket/ad/stream')
-    socket.onmessage = function(event) {
-        var obj = JSON.parse(event.data)
-        //console.log(obj)
-        $('#messages').empty();
-        $('#messages').append("<p>AdId:" + obj.AdId + " PLZ:" + obj.ZipCode + "</p>");
-//        window.scrollTo(0,document.body.scrollHeight);
-    }
-</script>
 
 {{template "footer.html" .}}

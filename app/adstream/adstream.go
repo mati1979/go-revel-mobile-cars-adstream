@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"encoding/base64"
 	"code.google.com/p/go.net/websocket"
-	"github.com/mati1979/go-revel-mobile-cars-adstream/app/xmlcodec"
 	"github.com/robfig/revel"
 	"os"
 	"container/list"
+	"io"
+	"github.com/mati1979/go-revel-mobile-cars-adstream/app/xmlcodec"
+	"strconv"
 	"time"
 )
 
@@ -15,8 +17,8 @@ type AdEvent struct {
 	AdId string
 	ZipCode string
 	Timestamp int    // Unix timestamp (secs)
-	Lat float32
-	Lon float32
+	Lat float64
+	Lon float64
 }
 
 type Subscription struct {
@@ -87,22 +89,56 @@ func Connect() {
 	ws, err := websocket.DialConfig(config)
 	if err != nil {
 		fmt.Printf("Dial failed: %s\n", err.Error())
-		os.Exit(1)
 	}
 
 	for {
 		var event xmlcodec.AdEvent
 		err := xmlcodec.XMLCodec.Receive(ws, &event)
+		//var message string
+		//err := websocket.Message.Receive(ws, &message)
 		if err != nil {
-			fmt.Println(fmt.Sprintf("error4:%s", err))
-			os.Exit(1)
+			if (err == io.EOF) {
+				fmt.Println(fmt.Sprintf("timeout:%s", err.Error()))
+			} else {
+				fmt.Println(fmt.Sprintf("error4:%s", err.Error()))
+			}
+			//ws = Conn(config)
 		}
+		//fmt.Println(message)
 		if event.EventType == "AD_CREATE_OR_UPDATE" {
-			adData := AdEvent{event.Ad.AdKey, event.Ad.Seller.SellerAddress.SellerZipCode.ZipCode, int(time.Now().Unix()), 0, 0}
-			publish <- adData
+			Id := event.Ad.AdKey
+			ZipCode := event.Ad.Seller.SellerAddress.SellerZipCode.ZipCode
+			Time := int(time.Now().Unix())
+			if (event.Ad.Seller.SellerCoords != nil) {
+				Lat := ParseF(&event.Ad.Seller.SellerCoords.Latitude)
+				Lon := ParseF(&event.Ad.Seller.SellerCoords.Longitude)
+				AdEven := AdEvent{Id, ZipCode, Time, Lat, Lon}
+				publish <- AdEven
+			} else {
+				AdEven := AdEvent{Id, ZipCode, Time, 0, 0}
+				publish <- AdEven
+			}
 		}
 	}
 }
+
+func ParseF(s *string) float64 {
+	f, err := strconv.ParseFloat(*s, 12)
+	if (err != nil) {
+		fmt.Println(fmt.Sprintf("ParseError:%s", err.Error()))
+	}
+
+	return f
+}
+
+//func Conn(conf *websocket.Config) (*websocket.Conn) {
+//	ws, err := websocket.DialConfig(conf)
+//	if err != nil {
+//		fmt.Printf("Dial failed: %s\n", err.Error())
+//	}
+//
+//	return ws
+//}
 
 // Drains a given channel of any messages.
 func drain(ch <-chan AdEvent) {

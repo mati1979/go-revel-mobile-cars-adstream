@@ -21,12 +21,19 @@ type Seller struct {
 	XMLName xml.Name `xml:"http://services.mobile.de/schema/seller seller,omitempty"`
 	SellerKey string `xml:"key,attr,omitempty"`
 	SellerAddress *SellerAddress `xml:"address,omitempty"`
+	SellerCoords *SellerCoords `xml:"coordinates,omitempty"`
 }
 
 type SellerAddress struct {
 	XMLName xml.Name `xml:"http://services.mobile.de/schema/seller address,omitempty"`
 	SellerZipCode *SellerZipCode `xml:"zipcode,omitempty"`
 	SellerCountryCode *SellerCountryCode `xml:"country-code,omitempty"`
+}
+
+type SellerCoords struct {
+	XMLName xml.Name `xml:"http://services.mobile.de/schema/seller coordinates,omitempty"`
+	Latitude string `xml:"latitude,omitempty"`
+	Longitude string `xml:"longitude,omitempty"`
 }
 
 type SellerZipCode struct {
