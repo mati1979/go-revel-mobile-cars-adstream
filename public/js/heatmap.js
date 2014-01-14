@@ -4,6 +4,7 @@ $(function ($, w) {
         var adData = [];
         var map;
         var markers = [];
+        var count = 0;
 
         heatmap = {
             initialize: function() {
@@ -30,6 +31,7 @@ $(function ($, w) {
                 });
                 markers.push(marker);
                 adData.push(latlon);
+                //console.log(marker)
                 if (adData.length % 100 == 0) {
                     heatmap.initialize();
                     var pointArray = new google.maps.MVCArray(adData);
@@ -49,9 +51,11 @@ $(function ($, w) {
             initSocket: function() {
                 var socket = new WebSocket('ws://' + window.location.host + '/websocket/ad/stream')
                 socket.onmessage = function(event) {
+                    count = count + 1;
                     var obj = JSON.parse(event.data)
                     $('#messages').empty();
-                    $('#messages').append("<p>" + event.data + "</p>");
+                    //$('#messages').append("<p>" + event.data + "</p>");
+                    $('#messages').append("<p>" + count + "</p>");
                     if (obj.Lat > 0 && obj.Lon > 0) {
                         heatmap.updateHeatMap(obj.Lat, obj.Lon)
                     }
@@ -59,7 +63,6 @@ $(function ($, w) {
             },
 
             loadScript: function() {
-                heatmap.initSocket();
                 $.ajax({
                     url: 'http://maps.google.com/maps/api/js?v=3&sensor=false&libraries=visualization&callback=heatmap.initialize',
                     dataType: 'script',
@@ -72,6 +75,7 @@ $(function ($, w) {
         console.log("heatmap load")
         $(window).load(function () {
             window.setTimeout(function () {
+                heatmap.initSocket();
                 heatmap.loadScript();
             }, 0)
         });

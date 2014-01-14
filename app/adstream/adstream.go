@@ -23,7 +23,10 @@ type AdEvent struct {
 
 type Subscription struct {
 	New <- chan AdEvent
+	Archive []AdEvent
 }
+
+const archiveSize = 100
 
 var (
 	subscribe = make(chan (chan <- Subscription), 10)
@@ -44,13 +47,18 @@ func (sub Subscription) Cancel() {
 }
 
 func AdStream() {
+	archive := list.New()
 	subscribers := list.New()
 	for {
 		select {
 		case ch := <-subscribe:
+			var events []AdEvent
+			for e := archive.Front(); e != nil; e = e.Next() {
+				events = append(events, e.Value.(AdEvent))
+			}
 			subscriber := make(chan AdEvent, 10)
 			subscribers.PushBack(subscriber)
-			ch <- Subscription{subscriber}
+			ch <- Subscription{subscriber, events}
 
 		case unsub := <-unsubscribe:
 			for ch := subscribers.Front(); ch != nil; ch = ch.Next() {
@@ -63,6 +71,10 @@ func AdStream() {
 			for ch := subscribers.Front(); ch != nil; ch = ch.Next() {
 				ch.Value.(chan AdEvent) <- event
 			}
+			if archive.Len() >= archiveSize {
+				archive.Remove(archive.Front())
+			}
+			archive.PushBack(event)
 		}
 	}
 }
@@ -94,17 +106,13 @@ func Connect() {
 	for {
 		var event xmlcodec.AdEvent
 		err := xmlcodec.XMLCodec.Receive(ws, &event)
-		//var message string
-		//err := websocket.Message.Receive(ws, &message)
 		if err != nil {
 			if (err == io.EOF) {
 				fmt.Println(fmt.Sprintf("timeout:%s", err.Error()))
 			} else {
 				fmt.Println(fmt.Sprintf("error4:%s", err.Error()))
 			}
-			//ws = Conn(config)
 		}
-		//fmt.Println(message)
 		if event.EventType == "AD_CREATE_OR_UPDATE" {
 			Id := event.Ad.AdKey
 			ZipCode := event.Ad.Seller.SellerAddress.SellerZipCode.ZipCode
@@ -130,15 +138,6 @@ func ParseF(s *string) float64 {
 
 	return f
 }
-
-//func Conn(conf *websocket.Config) (*websocket.Conn) {
-//	ws, err := websocket.DialConfig(conf)
-//	if err != nil {
-//		fmt.Printf("Dial failed: %s\n", err.Error())
-//	}
-//
-//	return ws
-//}
 
 // Drains a given channel of any messages.
 func drain(ch <-chan AdEvent) {
