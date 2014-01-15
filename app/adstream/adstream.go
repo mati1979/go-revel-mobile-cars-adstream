@@ -54,7 +54,7 @@ func AdStream() {
 			}
 			subscriber := make(chan AdEvent, 10)
 			subscribers.PushBack(subscriber)
-			ch <- Subscription{subscriber, events}
+		ch <- Subscription{subscriber, events}
 
 		case unsub := <-unsubscribe:
 			for ch := subscribers.Front(); ch != nil; ch = ch.Next() {
@@ -107,17 +107,26 @@ func Connect() {
 		if err != nil {
 			if (err == io.EOF) {
 				fmt.Println(fmt.Sprintf("timeout:%s", err.Error()))
+				go Connect()
+				break;
 			} else {
-				fmt.Println(fmt.Sprintf("error4:%s", err.Error()))
+				fmt.Println(fmt.Sprintf("io error:%s", err.Error()))
 			}
 		}
 		if event.EventType == "AD_CREATE_OR_UPDATE" {
-			if (event.Ad.Seller.SellerCoords != nil) {
-				Lat := ParseF(&event.Ad.Seller.SellerCoords.Latitude)
-				Lon := ParseF(&event.Ad.Seller.SellerCoords.Longitude)
-				AdEven := AdEvent{Lat, Lon}
-				publish <- AdEven
-			} //else convert postcode to lat lon
+			Ad := event.Ad;
+			if Ad != nil {
+				Seller := Ad.Seller
+				if Seller != nil {
+					SellerCoords := Seller.SellerCoords
+					if SellerCoords != nil {
+						Lat := ParseF(&event.Ad.Seller.SellerCoords.Latitude)
+						Lon := ParseF(&event.Ad.Seller.SellerCoords.Longitude)
+						AdEven := AdEvent{Lat, Lon}
+						publish <- AdEven
+					}
+				}
+			}
 		}
 	}
 }
