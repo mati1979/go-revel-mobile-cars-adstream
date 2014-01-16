@@ -88,7 +88,6 @@ func Connect() {
 	config, err := websocket.NewConfig(url, url)
 	if err != nil {
 		fmt.Printf("Config failed: %s\n", err.Error())
-		os.Exit(1)
 	}
 
 	login := user + ":" + pass
@@ -98,7 +97,8 @@ func Connect() {
 	ws, err := websocket.DialConfig(config)
 	if err != nil {
 		fmt.Printf("Dial failed: %s\n", err.Error())
-		os.Exit(1)
+		go Connect()
+		return
 	}
 
 	for {
@@ -122,8 +122,7 @@ func Connect() {
 					if SellerCoords != nil {
 						Lat := ParseF(&event.Ad.Seller.SellerCoords.Latitude)
 						Lon := ParseF(&event.Ad.Seller.SellerCoords.Longitude)
-						AdEven := AdEvent{Lat, Lon}
-						publish <- AdEven
+						publish <- AdEvent{Lat, Lon}
 					}
 				}
 			}
