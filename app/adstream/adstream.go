@@ -8,7 +8,7 @@ import (
 	"os"
 	"container/list"
 	"io"
-	"github.com/mati1979/go-revel-mobile-cars-adstream/app/xmlcodec"
+	"github.com/matiwinnetou/go-revel-mobile-cars-adstream/app/xmlcodec"
 	"strconv"
 )
 
