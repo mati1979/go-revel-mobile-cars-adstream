@@ -4,20 +4,6 @@ package routes
 import "github.com/revel/revel"
 
 
-type tWebSocket struct {}
-var WebSocket tWebSocket
-
-
-func (_ tWebSocket) AdStreamSocket(
-		ws interface{},
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "ws", ws)
-	return revel.MainRouter.Reverse("WebSocket.AdStreamSocket", args).Url
-}
-
-
 type tApp struct {}
 var App tApp
 
@@ -30,32 +16,17 @@ func (_ tApp) Index(
 }
 
 
-type tStatic struct {}
-var Static tStatic
+type tWebSocket struct {}
+var WebSocket tWebSocket
 
 
-func (_ tStatic) Serve(
-		prefix string,
-		filepath string,
+func (_ tWebSocket) AdStreamSocket(
+		ws interface{},
 		) string {
 	args := make(map[string]string)
 	
-	revel.Unbind(args, "prefix", prefix)
-	revel.Unbind(args, "filepath", filepath)
-	return revel.MainRouter.Reverse("Static.Serve", args).Url
-}
-
-func (_ tStatic) ServeModule(
-		moduleName string,
-		prefix string,
-		filepath string,
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "moduleName", moduleName)
-	revel.Unbind(args, "prefix", prefix)
-	revel.Unbind(args, "filepath", filepath)
-	return revel.MainRouter.Reverse("Static.ServeModule", args).Url
+	revel.Unbind(args, "ws", ws)
+	return revel.MainRouter.Reverse("WebSocket.AdStreamSocket", args).Url
 }
 
 
@@ -98,6 +69,35 @@ func (_ tTestRunner) List(
 	args := make(map[string]string)
 	
 	return revel.MainRouter.Reverse("TestRunner.List", args).Url
+}
+
+
+type tStatic struct {}
+var Static tStatic
+
+
+func (_ tStatic) Serve(
+		prefix string,
+		filepath string,
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "prefix", prefix)
+	revel.Unbind(args, "filepath", filepath)
+	return revel.MainRouter.Reverse("Static.Serve", args).Url
+}
+
+func (_ tStatic) ServeModule(
+		moduleName string,
+		prefix string,
+		filepath string,
+		) string {
+	args := make(map[string]string)
+	
+	revel.Unbind(args, "moduleName", moduleName)
+	revel.Unbind(args, "prefix", prefix)
+	revel.Unbind(args, "filepath", filepath)
+	return revel.MainRouter.Reverse("Static.ServeModule", args).Url
 }
 
 
