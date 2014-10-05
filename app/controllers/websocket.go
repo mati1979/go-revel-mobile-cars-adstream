@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"code.google.com/p/go.net/websocket"
-	"github.com/robfig/revel"
-	"github.com/mati1979/go-revel-mobile-cars-adstream/app/adstream"
+	"github.com/revel/revel"
+	"github.com/matiwinnetou/go-revel-mobile-cars-adstream/app/adstream"
 )
 
 type WebSocket struct {

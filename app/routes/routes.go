@@ -1,19 +1,7 @@
 // GENERATED CODE - DO NOT EDIT
 package routes
 
-import "github.com/robfig/revel"
-
-
-type tApp struct {}
-var App tApp
-
-
-func (_ tApp) Index(
-		) string {
-	args := make(map[string]string)
-	
-	return revel.MainRouter.Reverse("App.Index", args).Url
-}
+import "github.com/revel/revel"
 
 
 type tWebSocket struct {}
@@ -30,33 +18,27 @@ func (_ tWebSocket) AdStreamSocket(
 }
 
 
-type tTestRunner struct {}
-var TestRunner tTestRunner
+type tApp struct {}
+var App tApp
 
 
-func (_ tTestRunner) Index(
+func (_ tApp) Index(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("TestRunner.Index", args).Url
+	return revel.MainRouter.Reverse("App.Index", args).Url
 }
 
-func (_ tTestRunner) Run(
-		suite string,
-		test string,
-		) string {
-	args := make(map[string]string)
-	
-	revel.Unbind(args, "suite", suite)
-	revel.Unbind(args, "test", test)
-	return revel.MainRouter.Reverse("TestRunner.Run", args).Url
-}
 
-func (_ tTestRunner) List(
+type tJobs struct {}
+var Jobs tJobs
+
+
+func (_ tJobs) Status(
 		) string {
 	args := make(map[string]string)
 	
-	return revel.MainRouter.Reverse("TestRunner.List", args).Url
+	return revel.MainRouter.Reverse("Jobs.Status", args).Url
 }
 
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"encoding/base64"
 	"code.google.com/p/go.net/websocket"
-	"github.com/robfig/revel"
+	"github.com/revel/revel"
 	"os"
 	"container/list"
 	"io"
