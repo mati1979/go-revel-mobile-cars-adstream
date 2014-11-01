@@ -5,18 +5,22 @@ This application demonstrates usage of revel framework with websockets and real 
 # Go installation
 To install golang we will use brew command tool for osx, if you are not aware of it, familarize yourself with it here (http://brew.sh/)
 
+```
 brew install go
 mkdir gocode
 cd gocode
 export GOROOT="/usr/local/Cellar/go/1.3.3/libexec" #replace with your go version
 export GOPATH=`pwd` #gocode, directory previously created, will be bound to GOPATH variable
 export PATH=$GOPATH/bin:$GOPATH #bin folder of your compiled executables will end up in system path
+```
 
 # Revel
 This application uses Revel web framework (http://revel.github.io/)
 
 To install revel simply type:
+```
 go get github.com/revel/cmd/revel
+```
 
 this will install revel command line tool to your $GOPATH/bin
 
@@ -25,23 +29,31 @@ revel run github.com/revel/revel/samples/chat
 
 # Running
 Once google go and revel are installed you need to run go get:
+```
 go get github.com/matiwinnetou/go-revel-mobile-cars-adstream
+```
 
 Once you do this and assuming you are in $GOPATH folder open a file app.conf for editing which is in conf subdirectory:
+```
 vim src/github.com/matiwinnetou/go-revel-mobile-cars-adstream/conf/app.conf
+```
 and you need to provide your mobile.de AdStream credentials:
+```
 adstream.user=
 adstream.pass=
-
+```
 Please enter them for both dev and prod modes
 
 Once credentils are in place simply run the command:
+```
 revel run github.com/matiwinnetou/go-revel-mobile-cars-adstream
-
+```
 this will start the web application on port 9000 in dev modes
 
 You can start the application in prod mode by passing a prod variable at the end of the command:
+```
 revel run github.com/matiwinnetou/go-revel-mobile-cars-adstream prod
+```
 
 # TODO
 1. Occasionally after some time a stream hangs, detect a timeout and restart a remote stream to mobile.de
