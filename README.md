@@ -2,6 +2,14 @@
 
 This application demonstrates usage of revel framework with websockets and real time streaming using mobile.de API.
 
+# Running in a container
+The easiest way is to run this using docker and instructions available here:
+```
+https://registry.hub.docker.com/u/matiwinnetou/go-revel-mobile-cars-adstream/
+```
+
+# Running outside container (localhost)
+
 # Go installation
 To install golang we will use brew command tool for osx, if you are not aware of it, familarize yourself with it here (http://brew.sh/)
 
@@ -27,7 +35,7 @@ this will install revel command line tool to your $GOPATH/bin
 You are verify that revel is correctly installed by running a demo chat app:
 revel run github.com/revel/revel/samples/chat
 
-# Running
+https://registry.hub.docker.com/u/matiwinnetou/go-revel-mobile-cars-adstream/
 Once google go and revel are installed you need to run go get:
 ```
 go get github.com/matiwinnetou/go-revel-mobile-cars-adstream
