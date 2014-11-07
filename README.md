@@ -4,7 +4,7 @@ This application demonstrates usage of revel framework with websockets and real 
 
 # Running in a container
 The easiest way is to run this using docker and instructions available here:
-https://registry.hub.docker.com/u/matiwinnetou/go-revel-mobile-cars-adstream/
+https://registry.hub.docker.com/u/matiwinnetou/go-revel-mobile-cars-ad/
 
 # Running outside container (localhost)
 
